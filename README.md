@@ -16,7 +16,32 @@ It uses interruption to count ticks and the SimpleTimer library to make a sample
 
 
 ## How can we explore the output signal?
-To know about the motor's knimatics,we have to trat the encoder's output signal. 
+To know about the motor's knimatics,we have to treat the encoder's output signal. 
 Each encoder is characterized by its resolution N and an amplification ratio R. the resolution defines the number of the holes in the disk. 1 revolution corresponds to N holes. And the amplification ratio is defined by Vdisk = R * Vrotor.
 Vdisk: the disk angular speed and Vrotor: the rotor angular speed.
+
+To increase the precesion, we can reason on both edges. In this case, 1 revolution correspoonds to 2 * R * N edges.
+
+The signal output:
+
+![encoder output](https://user-images.githubusercontent.com/53936812/159940343-ccfed2a5-32ab-4f9e-9935-35c7712fb35e.png)
+
+The detection of each edge is managed by interruption.
+
+To do so, we configure the interruption ins the ``` void setup() ```
+
+```   attachInterrupt(digitalPinToInterrupt(2), ReagirGauche, CHANGE); ```
+
+It is to know that the ``` ReagirGauche ``` is a function that calculates the number of edges. 
+
+The ``` ReagirGauche ``` definition:
+
+``` 
+void ReagirGauche() 
+{  
+    comptG++;            
+} 
+```
+
+
 
