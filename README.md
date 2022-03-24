@@ -32,6 +32,8 @@ To do so, we configure the interruption ins the ``` void setup() ```
 
 ```   attachInterrupt(digitalPinToInterrupt(2), ReagirGauche, CHANGE); ```
 
+The number ``` 2 ``` represents the ``` PIN 2 ``` that supports interruption.
+
 It is to know that the ``` ReagirGauche ``` is a function that calculates the number of edges. 
 
 The ``` ReagirGauche ``` definition:
@@ -42,6 +44,8 @@ void ReagirGauche()
     comptG++;            
 } 
 ```
+
+The right motor's encoder is managed by the ``` PIN 3 ```, and the ``` ReagirDroite ``` manages the iinterruption on that pin.
 
 
 
