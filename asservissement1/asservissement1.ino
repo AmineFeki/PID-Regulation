@@ -54,8 +54,8 @@ void setup() {
   
   pinMode(canalGauche, INPUT);  
   pinMode(canalDroite, INPUT);
-  attachInterrupt(digitalPinToInterrupt(2), ReagirGauche, RISING);
-  attachInterrupt(digitalPinToInterrupt(3), ReagirDroite, RISING);
+  attachInterrupt(digitalPinToInterrupt(2), ReagirGauche, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(3), ReagirDroite, CHANGE);
 }
 
 void loop() {
